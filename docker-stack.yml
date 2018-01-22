@@ -1,0 +1,41 @@
+version: '3.4'
+services:
+  urlspider:
+    image:
+      leeyanzhe/fyspider:urlspider
+    deploy:
+      mode: replicated
+      replicas: 5
+      restart_policy:
+        condition: any
+        delay: 10s
+        max_attempts: 5
+        window: 60s
+      update_config:
+        parallelism: 20
+        failure_action: rollback
+        delay: 10s
+        order: stop-first
+    command: ["scrapy","crawl","Url","-a","category=http://www.freebuf.com"]
+  conspider:
+    image:
+      leeyanzhe/fyspider:conspider
+    deploy:
+      mode: replicated
+      replicas: 10
+      restart_policy:
+        condition: any
+        delay: 10s
+        max_attempts: 5
+        window: 60s
+      update_config:
+        parallelism: 20
+        failure_action: rollback
+        delay: 10s
+        order: stop-first
+    environment:
+      MYSQL_HOST: 172.29.152.203
+      MYSQL_USER: root
+      MYSQL_PASSWORD: kasiluo203
+      MYSQL_DB: fyspider
+
