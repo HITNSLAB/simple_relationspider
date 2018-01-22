@@ -53,21 +53,14 @@ class contentSpider(scrapy.Spider):
         item['title'] = ''.join(item['title'])
         item['real_url'] = response.url
         yield item
-        conn = MySQLdb.connect(
-            host=os.getenv('MYSQL_HOST', '172.29.152.203'),
-            db=os.getenv('MYSQL_DB', 'fyspider'),
-            user=os.getenv('MYSQL_USER', 'root'),
-            passwd=os.getenv('MYSQL_PASSWORD', 'kasiluo203'),
-            charset='utf8'
-        )
-        cur = conn.cursor()
+        cur = self.conn.cursor()
 
         cur.execute("select url from biao4 where flag3=0 limit 1")
         self.willstart = cur.fetchone()[0]
         self.logger.info("willstart = %s" % self.willstart)
 
         cur.execute('update biao4 set flag3="1" where url="' + self.willstart + '"')
-        conn.commit()
+        self.conn.commit()
 
         str = 'update biao4 set flag3=1 where url="' + self.willstart + '"'
         self.logger.info(str)
@@ -94,21 +87,13 @@ class contentSpider(scrapy.Spider):
         elif failure.check(TimeoutError, TCPTimedOutError):
             request = failure.request
             self.logger.error('TimeoutError on %s', request.url)
-        conn = MySQLdb.connect(
-            host=os.getenv('MYSQL_HOST', '172.29.152.203'),
-            db=os.getenv('MYSQL_DB', 'fyspider'),
-            user=os.getenv('MYSQL_USER', 'root'),
-            passwd=os.getenv('MYSQL_PASSWORD', 'kasiluo203'),
-            charset='utf8'
-        )
-        cur = conn.cursor()
-
+        cur = self.conn.cursor()
         cur.execute("select url from biao4 where flag3=0 limit 1")
         self.willstart = cur.fetchone()[0]
         self.logger.info("willstart = %s" % self.willstart)
 
         cur.execute('update biao4 set flag3="1" where url="' + self.willstart + '"')
-        conn.commit()
+        self.conn.commit()
 
         str = 'update biao4 set flag3=1 where url="' + self.willstart + '"'
         self.logger.info(str)
