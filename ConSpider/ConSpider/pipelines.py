@@ -1,29 +1,12 @@
 # -*- coding: utf-8 -*-
-
-# Define your item pipelines here
-#
-# Don't forget to add your pipeline to the ITEM_PIPELINES setting
-# See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
-from scrapy import signals
-import json
-import codecs
 from twisted.enterprise import adbapi
-from datetime import datetime
-from hashlib import md5
-import time
 import MySQLdb
 import MySQLdb.cursors
 import os
-import logging
-
-a = int(time.time())
 
 
-class UrlspiderPipeline(object):
-    logger = logging.getLogger(__name__)
-
+class ConspiderPipeline(object):
     def __init__(self):
-
         try:
             self.dbpool = adbapi.ConnectionPool('MySQLdb',
                                                 host=os.getenv('MYSQL_HOST', '172.29.152.203'),
@@ -34,20 +17,22 @@ class UrlspiderPipeline(object):
                                                 charset='utf8',
                                                 use_unicode=True
                                                 )
-            self.logger.info("Connect to db successfully!")
+            print "Connect to db successfully!"
 
-        except Exception as e:
-            self.logger.error("Fail to connect to db!, exception '%s'" % e)
+        except:
+            print "Fail to connect to db!"
 
     def process_item(self, item, spider):
         self.dbpool.runInteraction(self.insert_into_table, item)
         return item
 
     def insert_into_table(self, conn, item):
-        sql = "insert ignore into biao4(url,flag,flag2,flag3) values(%s,%s,%s,%s) "
-        param = (item['url'], item['flag'], item['flag2'], item['flag3'])
-        conn.execute(sql, param)
 
-        sql2 = "insert into biao5(fromWhere,toWhere) values(%s,%s) "
-        param2 = (item['fromWhere'], item['url'])
+        sql = "insert into biao6(title,head,body,real_url,get_url) values(%s,%s,%s,%s,%s)"
+        param = ([item['title'], item['head'], item['body'], item['real_url'], item['get_url']])
+        conn.execute(sql, param)
+        sql2 = "update biao4 set flag=%s where url=%s"
+        param2 = ("1", item['get_url'])
         conn.execute(sql2, param2)
+        # a='UPDATE grabsite set title='+item['title']+',head='+item['head']+',body='+item['body']+' where siteName ='+item['Url']
+        # conn.execute(a)

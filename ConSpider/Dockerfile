@@ -4,10 +4,10 @@ MAINTAINER FU YAO & LI YANZHE
 
 WORKDIR /usr/src/app
 
-ADD ./ ./UrlSpider
+ADD ./ ./ConSpider
 
-WORKDIR UrlSpider
+WORKDIR ConSpider
 
 RUN pip install -r requirements.txt
 
-CMD ["scrapy","crawl","Url","-a","category=http://www.freebuf.com"]
+CMD ["scrapy","crawl","contentSpider"]

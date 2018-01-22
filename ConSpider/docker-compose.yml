@@ -8,5 +8,4 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: kasiluo203
       MYSQL_DB: fyspider
-    command: ["scrapy","crawl","Url","-a","category=http://www.freebuf.com"]
 
