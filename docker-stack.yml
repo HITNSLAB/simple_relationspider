@@ -5,7 +5,7 @@ services:
       leeyanzhe/simple_relationspider:urlspider
     deploy:
       mode: replicated
-      replicas: 5
+      replicas: 10
       restart_policy:
         condition: any
         delay: 10s
@@ -22,7 +22,7 @@ services:
       leeyanzhe/simple_relationspider:conspider
     deploy:
       mode: replicated
-      replicas: 10
+      replicas: 150
       restart_policy:
         condition: any
         delay: 10s
