@@ -2,7 +2,7 @@ version: '3.4'
 services:
   urlspider:
     image:
-      leeyanzhe/fyspider:urlspider
+      leeyanzhe/simple_relationspider:urlspider
     deploy:
       mode: replicated
       replicas: 5
@@ -19,7 +19,7 @@ services:
     command: ["scrapy","crawl","Url","-a","category=http://www.freebuf.com"]
   conspider:
     image:
-      leeyanzhe/fyspider:conspider
+      leeyanzhe/simple_relationspider:conspider
     deploy:
       mode: replicated
       replicas: 10
