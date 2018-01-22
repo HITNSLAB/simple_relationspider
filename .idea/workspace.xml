@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e34cf8a8-9d59-43a7-b09a-c88d1fd7115f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConSpider/ConSpider/spiders/spider.py" afterPath="$PROJECT_DIR$/ConSpider/ConSpider/spiders/spider.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UrlSpider/.idea/UrlSpider.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UrlSpider/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UrlSpider/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UrlSpider/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UrlSpider/Dockerfile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UrlSpider/UrlSpider/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UrlSpider/UrlSpider/items.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UrlSpider/UrlSpider/middlewares.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UrlSpider/UrlSpider/pipelines.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UrlSpider/UrlSpider/settings.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UrlSpider/UrlSpider/spiders/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UrlSpider/UrlSpider/spiders/spider.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UrlSpider/docker-compose.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UrlSpider/requirements.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UrlSpider/scrapy.cfg" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/UrlSpider/UrlSpider/__init__.py" afterPath="$PROJECT_DIR$/docker-stack.yml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,22 +29,22 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="spider.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ConSpider/ConSpider/spiders/spider.py">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-                <marker date="1516612436495" expanded="true" signature="914:957" ph="select url f... biao4" />
-                <marker date="1516612436495" expanded="true" signature="1042:1103" ph="update biao4... " />
-                <marker date="1516612436495" expanded="true" signature="2419:2462" ph="select url f... biao4" />
-                <marker date="1516612436495" expanded="true" signature="2590:2651" ph="update biao4... " />
-                <marker date="1516612436495" expanded="true" signature="2692:2751" ph="update biao4... " />
-                <marker date="1516612436495" expanded="true" signature="4072:4115" ph="select url f... biao4" />
-                <marker date="1516612436495" expanded="true" signature="4243:4304" ph="update biao4... " />
-                <marker date="1516612436495" expanded="true" signature="4345:4404" ph="update biao4... " />
-              </folding>
+            <state relative-caret-position="285">
+              <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="docker-stack.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docker-stack.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="539">
+              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -48,6 +63,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ConSpider/ConSpider/spiders/spider.py" />
+        <option value="$PROJECT_DIR$/docker-stack.yml" />
       </list>
     </option>
   </component>
@@ -84,8 +100,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="simple_relationspider" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.7.13 (/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -95,10 +115,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="simple_relationspider" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ConSpider" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -306,7 +322,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08795181" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2554217" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -338,6 +354,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ConSpider/ConSpider/spiders/spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConSpider/ConSpider/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -346,21 +378,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConSpider/ConSpider/spiders/spider.py">
+    <entry file="file://$PROJECT_DIR$/docker-stack.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <marker date="1516612436495" expanded="true" signature="914:957" ph="select url f... biao4" />
-            <marker date="1516612436495" expanded="true" signature="1042:1103" ph="update biao4... " />
-            <marker date="1516612436495" expanded="true" signature="2419:2462" ph="select url f... biao4" />
-            <marker date="1516612436495" expanded="true" signature="2590:2651" ph="update biao4... " />
-            <marker date="1516612436495" expanded="true" signature="2692:2751" ph="update biao4... " />
-            <marker date="1516612436495" expanded="true" signature="4072:4115" ph="select url f... biao4" />
-            <marker date="1516612436495" expanded="true" signature="4243:4304" ph="update biao4... " />
-            <marker date="1516612436495" expanded="true" signature="4345:4404" ph="update biao4... " />
-          </folding>
+        <state relative-caret-position="539">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
