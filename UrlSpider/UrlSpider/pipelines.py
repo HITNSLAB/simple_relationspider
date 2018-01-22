@@ -40,14 +40,22 @@ class UrlspiderPipeline(object):
             self.logger.error("Fail to connect to db!, exception '%s'" % e)
 
     def process_item(self, item, spider):
-        self.dbpool.runInteraction(self.insert_into_table, item)
-        return item
-
-    def insert_into_table(self, conn, item):
         sql = "insert ignore into biao4(url,flag,flag2,flag3) values(%s,%s,%s,%s) "
         param = (item['url'], item['flag'], item['flag2'], item['flag3'])
-        conn.execute(sql, param)
 
         sql2 = "insert into biao5(fromWhere,toWhere) values(%s,%s) "
         param2 = (item['fromWhere'], item['url'])
-        conn.execute(sql2, param2)
+
+        self.dbpool.runOperation(sql, param)
+        self.dbpool.runOperation(sql2, param2)
+        # self.dbpool.runInteraction(self.insert_into_table, item)
+        return item
+        #
+        # def insert_into_table(self, conn, item):
+        #     sql = "insert ignore into biao4(url,flag,flag2,flag3) values(%s,%s,%s,%s) "
+        #     param = (item['url'], item['flag'], item['flag2'], item['flag3'])
+        #     conn.execute(sql, param)
+        #
+        #     sql2 = "insert into biao5(fromWhere,toWhere) values(%s,%s) "
+        #     param2 = (item['fromWhere'], item['url'])
+        #     conn.execute(sql2, param2)
