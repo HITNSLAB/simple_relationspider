@@ -24,16 +24,15 @@ class contentSpider(scrapy.Spider):
                 charset='utf8'
             )
             self.logger.info("Connect to db successfully!")
+            self.cur = self.conn.cursor()
+            self.cur.execute("select url from biao4 where flag3=0 limit 1")
+            self.willstart = self.cur.fetchone()[0]
+            self.cur.execute('update biao4 set flag3="1" where url="' + self.willstart + '"')
+
+            self.conn.commit()
+            self.start_urls.append(self.willstart)
         except Exception as e:
             self.logger.error("Fail to connect to db!, exception '%s'" % e)
-
-        self.cur = self.conn.cursor()
-        self.cur.execute("select url from biao4 where flag3=0 limit 1")
-        self.willstart = self.cur.fetchone()[0]
-        self.cur.execute('update biao4 set flag3="1" where url="' + self.willstart + '"')
-
-        self.conn.commit()
-        self.start_urls.append(self.willstart)
 
     def parse(self, response):
         item = ConspiderItem()
