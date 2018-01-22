@@ -16,11 +16,10 @@ class contentSpider(scrapy.Spider):
         super(contentSpider, self).__init__(**kwargs)
         try:
             self.conn = MySQLdb.connect(
-                host='localhost',
-                port=3306,
-                user='root',
-                passwd='',
-                db='test',
+                host=os.getenv('MYSQL_HOST', '172.29.152.203'),
+                db=os.getenv('MYSQL_DB', 'fyspider'),
+                user=os.getenv('MYSQL_USER', 'root'),
+                passwd=os.getenv('MYSQL_PASSWORD', 'kasiluo203'),
                 charset='utf8'
             )
             self.logger.info("Connect to db successfully!")
