@@ -1,6 +1,6 @@
 version: '3.4'
 services:
-  urlspider:
+  fyurlspider:
     image:
       leeyanzhe/simple_relationspider:urlspider
     deploy:
@@ -19,7 +19,7 @@ services:
     networks:
       - mainnet
     command: ["scrapy","crawl","Url","-a","category=http://www.freebuf.com"]
-  conspider:
+  fyconspider:
     image:
       leeyanzhe/simple_relationspider:conspider
     deploy:
