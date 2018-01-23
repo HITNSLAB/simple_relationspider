@@ -16,6 +16,8 @@ services:
         failure_action: rollback
         delay: 10s
         order: stop-first
+    networks:
+      - mainnet
     command: ["scrapy","crawl","Url","-a","category=http://www.freebuf.com"]
   conspider:
     image:
@@ -38,4 +40,9 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: kasiluo203
       MYSQL_DB: fyspider
+    networks:
+      - mainnet
+networks:
+  mainnet:
+    external: true
 
