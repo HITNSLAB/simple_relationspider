@@ -1,4 +1,4 @@
-FROM python:2
+FROM python:2-alpine
 
 MAINTAINER FU YAO & LI YANZHE
 
@@ -8,6 +8,7 @@ ADD ./ ./ConSpider
 
 WORKDIR ConSpider
 
-RUN pip install -r requirements.txt
+RUN pip install -U pip \
+    && pip install -r requirements.txt
 
 CMD ["scrapy","crawl","contentSpider"]
